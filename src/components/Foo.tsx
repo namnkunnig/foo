@@ -1,5 +1,20 @@
-import { Button, Checkbox, FormControlLabel, FormGroup } from "@mui/material";
+import {
+  Button,
+  Checkbox,
+  FormControlLabel,
+  FormGroup,
+  Card,
+  CardContent,
+  CardActions,
+  IconButton,
+  Tooltip,
+  FormControl,
+  RadioGroup,
+  FormLabel,
+  Radio,
+} from "@mui/material";
 import { Send, Delete } from "@mui/icons-material";
+
 export default function Foo() {
   return (
     <>
@@ -21,6 +36,11 @@ export default function Foo() {
           >
             Checkout
           </Button>
+          <Tooltip title="Foo" arrow>
+            <IconButton>
+              <Delete></Delete>
+            </IconButton>
+          </Tooltip>
         </div>
         <div className="flex justify-center w-6/12 gap-1">
           <FormGroup>
@@ -31,6 +51,38 @@ export default function Foo() {
             />
             <FormControlLabel disabled control={<Checkbox />} label="Tvåan" />
           </FormGroup>
+        </div>
+        <div className="flex justify-center w-6/12 gap-1">
+          <Card>
+            <CardContent sx={{ color: "red" }}>Foo</CardContent>
+            <CardActions>
+              <Button size="small">Share</Button>
+              <Button size="small">Learn More</Button>
+            </CardActions>
+          </Card>
+        </div>
+        <div className="flex justify-center w-6/12 gap-1">
+          <FormControl>
+            <FormLabel id="demo-radio-buttons-group-label">Gender</FormLabel>
+            <RadioGroup
+              aria-labelledby="demo-radio-buttons-group-label"
+              defaultValue="female"
+              name="radio-buttons-group"
+              onChange={() => alert("Fii")}
+            >
+              <FormControlLabel
+                value="female"
+                control={<Radio />}
+                label="Female"
+              />
+              <FormControlLabel value="male" control={<Radio />} label="Male" />
+              <FormControlLabel
+                value="other"
+                control={<Radio />}
+                label="Other"
+              />
+            </RadioGroup>
+          </FormControl>
         </div>
       </div>
     </>
